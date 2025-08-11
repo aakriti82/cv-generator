@@ -118,52 +118,14 @@ button
 {
     font-weight: 700;
 }
-.edublock {
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.5rem;
-  background-color: #fefefe;
-  border-left: 5px solid #3498db;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.4s ease, transform 0.3s ease;
-  cursor: default;
-  will-change: transform, background-color;
+.edublock{
+    margin-bottom: 10px;
 }
-
-.edublock:hover,
-.edublock:focus-within {
-  background-color: #e8f0fe;
-  transform: translateY(-5px);
-  outline: none;
+.edublock .head
+{
+    font-weight: 700;
+    font-size: 17px;
 }
-
-.edublock .head {
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: #1a1a1a;
-  margin-bottom: 0.75rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  user-select: text;
-}
-
-/* Responsive typography */
-@media (max-width: 600px) {
-  .edublock {
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .edublock .head {
-    font-size: 1.1rem;
-  }
-}
-
-/* Accessibility: focus style for keyboard users */
-.edublock:focus-visible {
-  outline: 3px solid #3498db;
-  outline-offset: 3px;
-}
-
 
 .navbtn
 {

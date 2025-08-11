@@ -170,6 +170,19 @@ form .btn .btn-layer{
 }
 form .btn:hover .btn-layer{
   left: 0;
+  filter: brightness(1.08) saturate(1.2);
+  box-shadow: 0 4px 24px 0 rgba(44, 145, 67, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.07);
+  transition:
+    left 0.4s ease,
+    filter 0.3s,
+    box-shadow 0.4s;
+  /* Add a slight scale effect for feedback */
+  transform: scale(1.03);
+  /* Add a border for more emphasis */
+  border: 1.5px solid #16d44f;
+  /* Optional: add a subtle glow */
+  outline: 2px solid #b2e5d6;
+  outline-offset: 2px;
 }
 form .btn input[type="submit"]{
   height: 100%;

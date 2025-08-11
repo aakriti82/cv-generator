@@ -50,71 +50,30 @@ function printpdf() {
   }
   
   
- // Add a new skill input block dynamically
-function addSkill() {
-  const skillsContainer = document.getElementById("skills");
-  
-  // Create skill container div
-  const skillDiv = document.createElement("div");
-  skillDiv.className = "skill";
-
-  // Create checkbox span
-  const checkboxSpan = document.createElement("span");
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.className = "input-checkbox";
-  checkboxSpan.appendChild(checkbox);
-
-  // Create icon span
-  const iconSpan = document.createElement("span");
-  iconSpan.innerHTML = '<i class="fas fa-chevron-circle-right"></i>';
-
-  // Create editable span
-  const editableSpan = document.createElement("span");
-  editableSpan.contentEditable = "true";
-  editableSpan.textContent = "write your skill here";
-  editableSpan.setAttribute("aria-label", "Skill input");
-  editableSpan.setAttribute("role", "textbox");
-  editableSpan.className = "skill-input";
-
-  // Append all spans to skill div
-  skillDiv.appendChild(checkboxSpan);
-  skillDiv.appendChild(iconSpan);
-  skillDiv.appendChild(editableSpan);
-
-  // Append skill div to container
-  skillsContainer.appendChild(skillDiv);
-
-  // Save resume (your existing function)
+ const addSkill = () => {
+  const skill = document.createElement('div');
+  skill.className = 'skill';
+  skill.innerHTML = `
+    <span><input type="checkbox" class="input-checkbox"></span>
+    <span><i class="fas fa-chevron-circle-right"></i></span>
+    <span contenteditable="true" role="textbox" aria-label="Skill input">write your skill here</span>
+  `;
+  document.getElementById('skills').appendChild(skill);
   saveResume();
-}
+};
 
-// Remove checked skill inputs
-function remSkill() {
-  const skillsContainer = document.getElementById("skills");
-  const checkboxes = skillsContainer.querySelectorAll(".input-checkbox");
+const remSkill = () => {
+  const skillsContainer = document.getElementById('skills');
+  const checkedSkills = [...skillsContainer.querySelectorAll('.input-checkbox:checked')];
 
-  if (checkboxes.length === 0) {
-    alert("No skills to delete!");
+  if (!checkedSkills.length) {
+    alert('Please select at least one skill to delete.');
     return;
   }
 
-  // Convert NodeList to Array for easier filtering
-  const checkedBoxes = Array.from(checkboxes).filter(cb => cb.checked);
-
-  if (checkedBoxes.length === 0) {
-    alert("Please select at least one skill to delete.");
-    return;
-  }
-
-  checkedBoxes.forEach(cb => {
-    const skillDiv = cb.closest(".skill");
-    if (skillDiv) skillDiv.remove();
-  });
-
-  // Save resume after removal
+  checkedSkills.forEach(cb => cb.closest('.skill').remove());
   saveResume();
-}
+};
 
   
   

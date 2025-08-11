@@ -168,21 +168,67 @@ form .btn .btn-layer{
   border-radius: 15px;
   transition: all 0.4s ease;;
 }
-form .btn:hover .btn-layer{
+form .btn {
+  height: 52px;
+  width: 100%;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 2px 12px rgba(44, 145, 67, 0.10);
+  transition: box-shadow 0.3s;
+}
+form .btn:active {
+  box-shadow: 0 1px 4px rgba(44, 145, 67, 0.18);
+}
+
+form .btn .btn-layer {
+  height: 100%;
+  width: 320%;
+  position: absolute;
+  left: -110%;
+  background: linear-gradient(90deg,#03530c,#008024,#16d44f,#0073e6);
+  border-radius: 18px;
+  transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);
+  opacity: 0.95;
+  filter: blur(0.2px);
+}
+
+form .btn:hover .btn-layer {
   left: 0;
-  filter: brightness(1.08) saturate(1.2);
-  box-shadow: 0 4px 24px 0 rgba(44, 145, 67, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.07);
+  filter: brightness(1.12) saturate(1.25) blur(0);
+  box-shadow: 0 6px 28px 0 rgba(44, 145, 67, 0.22), 0 2px 12px 0 rgba(0,0,0,0.09);
   transition:
-    left 0.4s ease,
+    left 0.5s cubic-bezier(0.68,-0.55,0.265,1.55),
     filter 0.3s,
     box-shadow 0.4s;
-  /* Add a slight scale effect for feedback */
-  transform: scale(1.03);
-  /* Add a border for more emphasis */
-  border: 1.5px solid #16d44f;
-  /* Optional: add a subtle glow */
-  outline: 2px solid #b2e5d6;
-  outline-offset: 2px;
+  transform: scale(1.05);
+  border: 2px solid #16d44f;
+  outline: 2.5px solid #b2e5d6;
+  outline-offset: 2.5px;
+  opacity: 1;
+}
+
+form .btn input[type="submit"] {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 18px;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 8px rgba(44, 145, 67, 0.13);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+form .btn input[type="submit"]:hover {
+  color: #eafff2;
+  text-shadow: 0 4px 16px rgba(44, 145, 67, 0.22);
 }
 form .btn input[type="submit"]{
   height: 100%;

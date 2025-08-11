@@ -21,27 +21,13 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', path.join(__dirname, 'views'));
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-
+// User Schema
 const UserSchema = new mongoose.Schema({
-  name: { type: String, required: true, trim: true },
-  email: { type: String, required: true, unique: true, lowercase: true, trim: true },
-  password: { type: String, required: true, minlength: 8 }
-}, { timestamps: true });
-
-UserSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
-  this.password = await bcrypt.hash(this.password, 10);
-  next();
+    name: String,
+    email: { type: String, unique: true },
+    password: String
 });
-
-UserSchema.methods.comparePassword = function(pw) {
-  return bcrypt.compare(pw, this.password);
-};
-
-module.exports = mongoose.model('User', UserSchema);
-
+const User = mongoose.model('User', UserSchema);
 
 // Sign Up Route
 app.get('/', (req, res) => {

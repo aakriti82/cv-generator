@@ -21,7 +21,6 @@
   "author": "",
   "license": "ISC",
   "description": "resume maker web application",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudhanshuSingh7/Resume-builder.git"

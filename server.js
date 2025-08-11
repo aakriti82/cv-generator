@@ -10,7 +10,6 @@ const path = require('path');
 mongoose.connect('mongodb://localhost:27017/auth-system', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // useCreateIndex: true, // Uncomment if using older Mongoose versions
 })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error('MongoDB connection error:', err));

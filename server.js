@@ -25,50 +25,22 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-    minlength: 2,
-    maxlength: 50
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-    trim: true,
-    match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address']
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 8
-  }
-}, {
-  timestamps: true // Adds createdAt and updatedAt fields
-});
+  name: { type: String, required: true, trim: true },
+  email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+  password: { type: String, required: true, minlength: 8 }
+}, { timestamps: true });
 
-// Hash password before saving
 UserSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
-  
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch(err) {
-    next(err);
-  }
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
 });
 
-// Method to compare password for login
-UserSchema.methods.comparePassword = async function(candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
+UserSchema.methods.comparePassword = function(pw) {
+  return bcrypt.compare(pw, this.password);
 };
 
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+module.exports = mongoose.model('User', UserSchema);
 
 
 // Sign Up Route

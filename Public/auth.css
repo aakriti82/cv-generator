@@ -6,45 +6,12 @@
   font-family: 'Poppins', sans-serif;
 }
 html,body{
-  min-height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(120deg, #e0ffe7 0%, #f7f7ff 50%, #d0f0ff 100%);
-  /* Add a subtle pattern overlay */
-  background-image:
-    linear-gradient(120deg, #e0ffe7 0%, #f7f7ff 50%, #d0f0ff 100%),
-    repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0 2px, transparent 2px 8px);
-  font-size: 17px;
-  transition: background 0.5s;
-  animation: bgFadeIn 1.2s cubic-bezier(0.68,-0.55,0.265,1.55);
-  /* Add a soft box-shadow to the whole viewport */
-  box-shadow: 0 0 40px 0 rgba(44,145,67,0.08) inset;
-}
-
-/* Add a slight zoom-in animation on load */
-@keyframes bgFadeIn {
-  from { filter: blur(8px) brightness(0.8); transform: scale(1.03);}
-  to   { filter: blur(0) brightness(1); transform: scale(1);}
-}
-
-/* Custom scrollbar for modern look */
-::-webkit-scrollbar {
-  width: 8px;
-  background: #e0ffe7;
-}
-::-webkit-scrollbar-thumb {
-  background: #b2e5d6;
-  border-radius: 8px;
-}
-
-/* Selection color for better accessibility */
-::selection{
-  background: #2c9143;
-  color: #fff;  
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: -webkit-linear-gradient(left, #ffffff,#ffffff,#fffefe
+, #ffffff);
 }
 ::selection{
   background: #1a75ff;

@@ -118,14 +118,28 @@ button
 {
     font-weight: 700;
 }
-.edublock{
-    margin-bottom: 10px;
+.edublock {
+    margin-bottom: 1rem;           /* Use relative units for better scalability */
+    padding: 0.5rem 1rem;          /* Add some padding for spacing inside */
+    background-color: #f9f9f9;     /* Light background for separation */
+    border-left: 4px solid #3498db; /* Stylish colored left border */
+    border-radius: 4px;            /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
-.edublock .head
-{
+
+.edublock:hover {
+    background-color: #e6f0ff;    /* Light blue highlight on hover */
+}
+
+.edublock .head {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 1.1rem;            /* Use rem unit for scalability */
+    color: #2c3e50;               /* Darker color for heading */
+    margin-bottom: 0.5rem;        /* Space below heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean readable font */
 }
+
 
 .navbtn
 {

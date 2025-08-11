@@ -50,31 +50,32 @@ function printpdf() {
   }
   
   
- const addSkill = () => {
-  const skill = document.createElement('div');
-  skill.className = 'skill';
-  skill.innerHTML = `
-    <span><input type="checkbox" class="input-checkbox"></span>
-    <span><i class="fas fa-chevron-circle-right"></i></span>
-    <span contenteditable="true" role="textbox" aria-label="Skill input">write your skill here</span>
-  `;
-  document.getElementById('skills').appendChild(skill);
-  saveResume();
-};
-
-const remSkill = () => {
-  const skillsContainer = document.getElementById('skills');
-  const checkedSkills = [...skillsContainer.querySelectorAll('.input-checkbox:checked')];
-
-  if (!checkedSkills.length) {
-    alert('Please select at least one skill to delete.');
-    return;
+  function addskill() {
+    const head = document.createElement('div');
+    document.getElementById("skills").appendChild(head);
+    head.innerHTML = ('<div class="skill"><span><input type="checkbox" class="input-checkbox"></span><span><i class="fas fa-chevron-circle-right"></i></span>   <span contenteditable="true">write your skill here</span></div>');
+    saveresume();
   }
-
-  checkedSkills.forEach(cb => cb.closest('.skill').remove());
-  saveResume();
-};
-
+  
+  function remskill(event) {
+    let val = 0;
+    const allInputCheckboxes = event.target.parentElement.getElementsByClassName("input-checkbox");
+    const array = Array.from(allInputCheckboxes);
+    if (array.length === 0) {
+        alert("No fields are present to be deleted!")
+    }
+    else {
+        console.log(array);
+        array.forEach(element => {
+            if (element.checked === true) {
+                val = 1;
+                element.parentElement.parentElement.remove();
+            }
+        })
+        if (val === 0) alert("Please select the checkboxes to delete the required field!")
+    }
+    saveresume();
+  }
   
   
   function addLang() {

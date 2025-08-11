@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+    
+        .wrapper {
+            background-color: #fff;
+            width: 380px;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .title-text {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+    
+        .title {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+    
+        .title:hover {
+            color: #3498db;
+        }
+    
+        .form-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden; /* Hide the part of form not visible */
+        }
+    
+        .form-inner {
+            display: flex;
+            width: 200%; /* Ensure full width of both forms */
+            transition: transform 0.6s ease-in-out;
+        }
+    
+        .form-inner form {
+            width: 50%;
+            padding: 20px;
+            transition: all 0.6s ease-in-out;
+        }
+    
+        .field {
+            margin-bottom: 20px;
+        }
+    
+        .field input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+    
+        .field input:focus {
+            border-color: #3498db;
+        }
+    
+        .pass-link {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+    
+        .pass-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    
+        .pass-link a:hover {
+            text-decoration: underline;
+        }
+    
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    
+        .signup-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    
+        .field.btn {
+            background-color: #3498db;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        .field.btn input {
+            width: 100%;
+            padding: 12px 0;
+            color: #fff;
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .field.btn:hover input {
+            background-color: #2980b9;
+        }
+    
+        /* Slide Animation */
+        .slide-controls {
+            height: 2px;
+            background-color: #ccc;
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+    
+        .slider-tab {
+            height: 2px;
+            background-color: #3498db;
+            width: 50%;
+            position: absolute;
+            transition: all 0.6s ease;
+        }
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .wrapper {
+                width: 90%;
+            }
+    
+            .title-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login" onclick="showLogin()">Login</div>
+            <div class="title signup" onclick="showSignup()">Signup</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <!-- LOGIN FORM -->
+                <form action="/signin" method="POST" class="login">
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div>
+                    <div class="field btn">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">Not a member? <a href="#" onclick="showSignup()">Signup now</a></div>
+                </form>
+    
+                <!-- SIGNUP FORM -->
+                <form action="/signup" method="POST" class="signup">
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="field btn">
+                        <input type="submit" value="Signup">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const sliderTab = document.querySelector(".slider-tab");
+        const formInner = document.querySelector(".form-inner");
+    
+        function showLogin() {
+            formInner.style.transform = "translateX(0%)";
+            sliderTab.style.left = "0%";
+        }
+    
+        function showSignup() {
+            formInner.style.transform = "translateX(-50%)";
+            sliderTab.style.left = "50%";
+        }
+    </script>
+    
+</body>
+</html>

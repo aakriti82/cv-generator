@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template- Resume builder</title>
+     <style>
+   /* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.container {
+  overflow: hidden;
+  max-width: 390px;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent white */  
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,1);
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
+  
+}
+
+.logo {
+    width: 100px; /* Adjust width as necessary */
+    height: 100px; /* Adjust height to keep aspect ratio */
+    margin-bottom: 1px;
+    display: block; /* Ensures image is displayed as a block element */
+    margin-right: auto; /* Center the icon */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+p {
+    font-size: 16px;
+    color: #080808;
+    margin-bottom: 2rem;
+}
+
+.t {
+    color: #00FF00;
+    font-size: 27px; /* Set font size to 20px */
+    text-shadow: -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000;
+}
+
+
+
+/* Options Container */
+.option-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Add gap between the boxes */
+}
+
+.option {
+    background: transparent; /* Make background transparent */
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+.option:hover {
+    transform: translateY(-10px);
+}
+
+#a {
+    width: 130px;
+}
+
+.icon {
+    width: 100px; /* Adjust width as necessary */
+    height: 80px; /* Adjust height to keep aspect ratio */
+    margin-bottom: 10px;
+    display: block; /* Ensures image is displayed as a block element */
+    margin-left: auto; /* Center the icon */
+    margin-right: auto; /* Center the icon */
+}
+
+
+h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: black;   
+}
+
+.option p {
+    font-size: 12px;
+    color: #060606;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Assets/images/logonxt.png" alt="Logo" class="logo">
+        <h1>Welcome to <span class="t">Template selection</span></h1>
+        <p>You can create your ATS-friendly resume in two simple ways:</p>
+        <div class="option-box">
+            <a href="/resume1" class="option">
+                <img src="Assets\images\one.png" alt="Add Credits Icon" class="icon" id="a"> <!-- Replace with your image path -->
+                <h2>Enter your details in Blocks</h2>
+                <p>Resume will be generated below for you</p>
+            </a>
+            <a href="/resume2" class="option">
+                <img src="Assets\images\two.png" alt="Cloud Storage Icon" class="icon"> <!-- Replace with your image path -->
+                <h2>Edit your existing resume</h2>
+                <p> Simply update it with your information for a quick refresh.</p>
+            </a>
+        </div>
+    </div>
+    
+    
+
+    
+
+
+   
+</body>
+</html>

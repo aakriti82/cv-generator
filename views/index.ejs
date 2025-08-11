@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder- Smart Cv Genertor</title>
+    <link rel="shortcut Icon" href="Assets/images/smart-cv-generator-logo.png">
+    <!-- <link rel="stylesheet" href="Assets\CSS\styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Assets/images/smart-cv-generator-logo.png" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="/template">Resume <span>&#9660;</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="#">Cover Letter <span>&#9660;</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="#Testimonial">Testimonial <span>&#9660;</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="#">Blog <span>&#9660;</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="#contact-container">Contact Us</a>
+                </li>
+            </ul>
+            
+            <div class="auth-buttons">
+              <% if(cookies.token) { %>
+                <a href="/logout">
+                  <button class="sign-in">logout</button>
+                </a>       
+                       <% } else { %>
+                <a href="/auth">
+                  <button class="sign-in">Sign in</button>
+                </a>
+              <% } %>
+                <button class="get-started">Get Started</button>
+            </div>
+        </nav> 
+        
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+            <h1 id="nxt">Smart Cv Genertor <span><br>Resume Builder</span> helps you get hired at top companies</h1> 
+
+            <div class="cta-buttons">
+            <a href="/template">
+                <button class="primary-btn">Build Your Resume</button>
+            </a>
+            </div>
+            
+            <p class="trusted-by">Loved by interviewers at</p>
+            <div class="trusted-logos">
+                <img src="Assets\images\TESLA.png" alt="Tesla">
+                <img src="Assets\images\GOOGLE.png" alt="Google">
+                <img src="Assets\images\FB.png" alt="Facebook">
+                <img src="Assets\images\SPOTIFY.png" alt="Spotify">
+                <img src="Assets\images\AMAZON.png" alt="Amazon">
+            </div>
+        </div>
+
+        <div class="image-container">
+                <img src="https://cdn-images.zety.com/pages/zety_in_resume_with_photo_2.jpg" alt="Resume Sample 1" class="active">
+               
+        </div>
+    </section>
+
+    <!-- Second Section -->
+<section class="features-section">
+    <div class="container">
+        <!-- Feature Items Row -->
+        <div class="features-row">
+            <div class="feature">
+                <img src="Assets/images/ATS.png" alt="ATS Friendly Icon">
+                <p>ATS-friendly professionally designed resumes</p>
+            </div>
+            <div class="feature">
+                <img src="Assets/images/settinglogo.png" alt="Font and Color Icon">
+                <p>Change the font, color and background combinations</p>
+            </div>
+            <div class="feature">
+                <img src="Assets/images/settinglogo1.png" alt="Layout Icon">
+                <p>Two-column, single-column, and multi-page layouts</p>
+            </div>
+        </div>
+        <!-- Button -->
+         <a href="/template">
+        <button class="cta-btn">Create ATS Friendly Resume  ➜</button></a>
+    </div>
+</section>
+
+
+    
+      <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Individual Resumes -->
+                <div class="carousel-slide"><a href="/template">
+                    <img src="Assets\images\resume1.png" alt="Resume 1"></a>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Assets\images\resume2.jpg" alt="Resume 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Assets\images\resume3.png" alt="Resume 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Assets\images\resume4.png" alt="Resume 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Assets\images\resume5.jpeg" alt="Resume 5">
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-btn prev">❮</button>
+            <button class="carousel-btn next">❯</button>
+        </div>
+        <!-- Dots Indicator -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+    <script src="section2.js"></script>
+    
+    
+<!-- TESIMONIAL SECTION -->
+
+    <div class="responsive-container-block big-container" id="Testimonial">
+        <div class="responsive-container-block bg">
+          <p class="text-blk title">
+            Testimonials
+          </p>
+          <p class="text-blk desc">
+            Incorporating testimonials on the Smart Cv Genertor website will help communicate the value of the resume builder to new users in a convincing, user-driven way.
+          </p>
+          <div class="responsive-container-block blocks">
+            <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content">
+              <p class="text-blk info-block">
+                "Smart Cv Genertor made creating my resume a breeze! I was struggling with formatting and keeping everything ATS-friendly, but this tool simplified the whole process. The template selection was impressive, and I loved how easy it was to customize. I landed my dream job within weeks of using it!"
+              <div class="responsive-container-block person">
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                  <img class="profile-img" src="Assets\images\person22.jpeg">
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                  <p class="text-blk name">
+                    Jane Doe
+                  </p>
+                  <p class="text-blk desig">
+                    Software Developer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content">
+              <p class="text-blk info-block">
+                "Smart Cv Genertor saved me so much time. I needed a polished resume that stood out, and this platform delivered exactly that. The intuitive design and ease of use are unmatched. I highly recommend it to anyone looking to take their resume to the next level."
+              </p>
+              <div class="responsive-container-block person">
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                  <img class="profile-img" src="Assets\images\person1.jpeg">
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                  <p class="text-blk name">
+                    Emma L. 
+                  </p>
+                  <p class="text-blk desig">
+                    Graphic Designer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content bottom">
+              <p class="text-blk info-block">
+                "I've used many resume builders, but Smart Cv Genertor is by far the best! The ability to either build a resume from scratch or quickly edit my existing one was a game-changer. The ATS-friendly formatting helped me get noticed by recruiters, and the clean interface made the process smooth and enjoyable."
+              </p>
+              <div class="responsive-container-block person">
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                  <img class="profile-img" src="Assets\images\person3.jpeg">
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                  <p class="text-blk name">
+                    David R.
+                  </p>
+                  <p class="text-blk desig">
+                    Marketing Manager
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Contact Us Section -->
+<div id="contact-container" class="contact-container">
+    <h2>Contact Us</h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="5978d4ab-8148-44c6-8c6d-30c3caa0c404">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+       <!-- footer section -->
+    <footer class="footer">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-spotify"></i></a>
+        </div>
+    
+        <div class="footer-links">
+          <div>
+            <strong>JOB SEEKERS</strong>
+            <a href="#">Create a resume</a>
+            <a href="#">Resume examples</a>
+            <a href="#">Resume templates</a>
+            <a href="#">Cover Letter Templates</a>
+            <a href="#">Job Search</a>
+          </div>
+          <div>
+            <strong>CAREER RESOURCES</strong>
+            <a href="#">Resume Help</a>
+            <a href="#">Job Interview</a>
+            <a href="#">Career</a>
+            <a href="#">Cover Letter</a>
+            <a href="#">Blog</a>
+          </div>
+          <div>
+            <strong>OUR COMPANY</strong>
+            <a href="#">About Us</a>
+            <a href="#">Pricing</a>
+            <a href="#">Sponsorship Program</a>
+            <a href="#">Media Kit</a>
+            <a href="#">Affiliates</a>
+          </div>
+          <div>
+            <strong>SUPPORT</strong>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy</a>
+            <a href="#">Right of Withdrawal</a>
+          </div>
+        </div>
+    
+        <div class="copyright">
+          <p>&copy; 2024 Smart Cv Genertor More than a resume. Resume Building is a part of the Smart Cv Genertor product ecosystem.</p>
+        </div>
+      </footer>
+</body>
+</html>

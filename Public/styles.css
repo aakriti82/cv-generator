@@ -50,40 +50,36 @@ body {
 .navbar .logo {
   display: flex;
   align-items: center;
-  font-size: 1.25rem;          /* थोरो ठुलो र readable */
+  font-size: 1.2rem;
   color: #00c9a7;
   font-weight: 700;
-  gap: 0.5rem;                 /* logo र text बीच space */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  user-select: none;           /* टेक्स्ट सिलेक्ट नगर्ने */
+  gap: 0.5rem;
+  user-select: none;
   cursor: default;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .navbar .logo:hover {
-  color: #028a75;              /* हल्का hover effect */
+  color: #028a75;
 }
 
 .navbar .logo-img {
   width: 160px;
-  max-width: 100%;             /* responsive fallback */
+  max-width: 100%;
   height: auto;
-  object-fit: contain;         /* राम्रो image fitting */
-  border-radius: 6px;          /* थोरो round corner */
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.3s;
 }
 
 .navbar .logo-img:hover {
-  transform: scale(1.05);      /* hover मा हल्का zoom effect */
+  transform: scale(1.05);
 }
 
-/* Responsive adjustment for smaller screens */
 @media (max-width: 600px) {
   .navbar .logo {
     font-size: 1rem;
     gap: 0.3rem;
   }
-
   .navbar .logo-img {
     width: 120px;
   }

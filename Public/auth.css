@@ -6,12 +6,26 @@
   font-family: 'Poppins', sans-serif;
 }
 html,body{
-  display: grid;
-  height: 100%;
-  width: 100%;
-  place-items: center;
-  background: -webkit-linear-gradient(left, #ffffff,#ffffff,#fffefe
-, #ffffff);
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Modern, soft gradient background */
+  background: linear-gradient(135deg, #e0ffe7 0%, #f7f7ff 50%, #d0f0ff 100%);
+  /* fallback for older browsers */
+  background: -webkit-linear-gradient(135deg, #e0ffe7 0%, #f7f7ff 50%, #d0f0ff 100%);
+  font-size: 16px;
+  transition: background 0.5s;
+  /* Subtle animation on load */
+  animation: bgFadeIn 1.2s ease;
+}
+
+@keyframes bgFadeIn {
+  from { filter: blur(8px) brightness(0.8);}
+  to   { filter: blur(0) brightness(1);}
 }
 ::selection{
   background: #1a75ff;

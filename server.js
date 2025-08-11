@@ -6,46 +6,20 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
-// MongoDB connection with advanced options and event listeners
-mongoose.connect('mongodb://localhost:27017/auth-system', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+// MongoDB connection
+mongoose.connect('mongodb://localhost:27017/auth-system')
     .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
-mongoose.connection.on('disconnected', () => {
-    console.warn('MongoDB disconnected!');
-});
-mongoose.connection.on('reconnected', () => {
-    console.log('MongoDB reconnected!');
-});
+    .catch(err => console.error(err));
 
 const app = express();
-
-// Security and performance middlewares
-const helmet = require('helmet');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
-const cors = require('cors');
-
-app.use(helmet()); // Adds security headers
-app.use(morgan('dev')); // Logs HTTP requests
-app.use(cors()); // Enables CORS
-
-// Rate limiting to prevent brute-force attacks
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-});
-app.use(limiter);
-
 app.use(express.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/Assets', express.static(path.join(__dirname, 'Assets')));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('views', path.join(__dirname, 'views'));
 // User Schema
 const UserSchema = new mongoose.Schema({
